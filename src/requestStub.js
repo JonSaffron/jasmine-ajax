@@ -70,6 +70,7 @@ getJasmineRequireObj().AjaxRequestStub = function() {
       var urlMatches = false;
       fullUrl = fullUrl.toString();
       if (this.url instanceof RegExp) {
+        this.url.lastIndex = 0;
         urlMatches = this.url.test(fullUrl);
       } else {
         var urlSplit = fullUrl.split('?'),
